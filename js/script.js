@@ -1,14 +1,14 @@
-let display = document.getElementById('display');
 let historyList = document.getElementById('history-list');
 
 // Load history from LocalStorage
 loadHistory();
 
-function clearDisplay() {
-    display.innerText = '0';
+function clearDisplay(displayId) {
+    document.getElementById(displayId).innerText = '0';
 }
 
-function appendToDisplay(value) {
+function appendToDisplay(displayId, value) {
+    let display = document.getElementById(displayId);
     if (display.innerText === '0') {
         display.innerText = value;
     } else {
@@ -16,15 +16,16 @@ function appendToDisplay(value) {
     }
 }
 
-function calculateResult() {
+function calculateResult(displayId) {
+    let display = document.getElementById(displayId);
     try {
-        let result = eval(display.innerText);
+        let result = eval(display.innerText.replace('^', '**').replace('pi', 'Math.PI').replace(/(sin|cos|tan|log|sqrt|pow)/g, 'Math.$1'));
         addToHistory(display.innerText + ' = ' + result);
         display.innerText = result;
     } catch (error) {
         display.innerText = 'Error';
         setTimeout(() => {
-            clearDisplay();
+            clearDisplay(displayId);
         }, 1500);
     }
 }
@@ -53,5 +54,10 @@ function displayHistory() {
 }
 
 function loadHistory() {
+    displayHistory();
+}
+
+function clearHistory() {
+    localStorage.removeItem('calcHistory');
     displayHistory();
 }

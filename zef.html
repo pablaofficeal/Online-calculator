@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Basic Calculator</a></li>
+                <li><a href="zef.html">Scientific Calculator</a></li>
+                <li><a href="#history">History</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="scientific-calculator" class="calculator-section">
+        <h2>Scientific Calculator</h2>
+        <div class="calculator">
+            <div class="display" id="scientific-display">0</div>
+            <div class="buttons">
+                <button class="btn" onclick="clearDisplay('scientific-display')">C</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', 'sin(')">sin</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', 'cos(')">cos</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', 'tan(')">tan</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', 'log(')">log</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', 'sqrt(')">√</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', 'pow(')">^</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', 'pi')">π</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', '7')">7</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', '8')">8</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', '9')">9</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', '/')">/</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', '4')">4</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', '5')">5</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', '6')">6</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', '*')">*</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', '1')">1</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', '2')">2</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', '3')">3</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', '-')">-</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', '0')">0</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', '.')">.</button>
+                <button class="btn" onclick="appendToDisplay('scientific-display', '+')">+</button>
+                <button class="btn" onclick="calculateResult('scientific-display')">=</button>
+            </div>
+        </div>
+    </section>
+    <script src="js/script.js"></script>
+</body>
+</html>
